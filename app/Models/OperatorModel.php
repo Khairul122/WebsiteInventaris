@@ -46,4 +46,8 @@ class OperatorModel extends Model
             ->where('id_operator', $id_operator)
             ->update($data_operator);
     }
+    public function DeleteOperator($id_operator)
+    {
+        DB::table('operator')->where('id_operator', $id_operator)->delete();
+    }
 }

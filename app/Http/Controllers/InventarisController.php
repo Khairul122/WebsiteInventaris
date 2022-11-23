@@ -129,4 +129,10 @@ class InventarisController extends Controller
         $this->InventarisModel->EditInventaris($id_inventaris, $data_inventaris);
         return redirect()->route('inventaris')->with('pesan', 'Data Berhasil Disimpan');
     }
+
+    public function delete($id_inventaris)
+    {
+        $this->InventarisModel->DeleteInventaris($id_inventaris);
+        return redirect()->route('inventaris')->with('pesan', 'Data Berhasil Di Hapus');
+    }
 }

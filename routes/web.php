@@ -49,6 +49,12 @@ Route::get('/lokasi/v_edit_lokasi/{id_lokasi}', [LokasiController::class, 'EditL
 // Proses Update Data Lokasi
 Route::post('/lokasi/UpdateLokasi/{id_lokasi}', [LokasiController::class, 'UpdateLokasi']);
 
+// Hapus Data Lokasi
+Route::get('lokasi/DeleteLokasi/{id_lokasi}', [
+    LokasiController::class,
+    'Delete'
+]);
+
 
 
 // Operator
@@ -70,6 +76,12 @@ Route::get('/operator/v_edit_operator/{id_operator}', [OperatorController::class
 // Proses Update Data Operator
 Route::post('/operator/UpdateOperator/{id_operator}', [OperatorController::class, 'UpdateOperator']);
 
+// Hapus Data Operator
+Route::get('operator/DeleteOperator/{id_operator}', [
+    OperatorController::class,
+    'Delete'
+]);
+
 
 // Inventaris
 // Menampilkan Halaman Input Inventaris
@@ -89,3 +101,14 @@ Route::get('/inventaris/v_edit_inventaris/{id_inventaris}', [InventarisControlle
 
 // Proses Update Data Operator
 Route::post('/inventaris/UpdateInventaris/{id_inventaris}', [InventarisController::class, 'UpdateInventaris']);
+
+// Menghapus data
+Route::get('inventaris/DeleteInventaris/{id_inventaris}', [
+    InventarisController::class,
+    'DeleteInventaris'
+]);
+
+Route::get('inventaris/DeleteInventaris/{id_inventaris}', [
+    InventarisController::class,
+    'Delete'
+]);

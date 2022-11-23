@@ -45,4 +45,9 @@ class LokasiModel extends Model
             ->where('id_lokasi', $id_lokasi)
             ->update($data_lokasi);
     }
+
+    public function DeleteLokasi($id_lokasi)
+    {
+        DB::table('lokasi')->where('id_lokasi', $id_lokasi)->delete();
+    }
 }

@@ -118,4 +118,10 @@ class OperatorController extends Controller
         $this->OperatorModel->EditOperator($id_operator, $data_operator);
         return redirect()->route('operator')->with('pesan', 'Data Berhasil Di Update');
     }
+
+    public function delete($id_operator)
+    {
+        $this->OperatorModel->DeleteOperator($id_operator);
+        return redirect()->route('operator')->with('pesan', 'Data Berhasil Di Hapus');
+    }
 }

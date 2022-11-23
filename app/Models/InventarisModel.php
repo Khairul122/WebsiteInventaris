@@ -40,4 +40,9 @@ class InventarisModel extends Model
             ->where('id_inventaris', $id_inventaris)
             ->update($data_inventaris);
     }
+
+    public function DeleteInventaris($id_inventaris)
+    {
+        DB::table('inventaris')->where('id_inventaris', $id_inventaris)->delete();
+    }
 }

@@ -95,4 +95,11 @@ class LokasiController extends Controller
         $this->LokasiModel->EditLokasi($id_lokasi, $data_lokasi);
         return redirect()->route('lokasi')->with('pesan', 'Data Berhasil Di Update');
     }
+
+    // Fungsi menghapus data
+    public function delete($id_lokasi)
+    {
+        $this->LokasiModel->DeleteLokasi($id_lokasi);
+        return redirect()->route('lokasi')->with('pesan', 'Data Berhasil Di Hapus');
+    }
 }
