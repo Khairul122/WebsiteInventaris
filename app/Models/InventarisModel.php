@@ -24,7 +24,7 @@ class InventarisModel extends Model
     //Menampilak All Lokasi
     public function allData()
     {
-        return DB::table('inventaris')->get();
+        return DB::table('lokasi')->get();
     }
 
     // Add Operator
