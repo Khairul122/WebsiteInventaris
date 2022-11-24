@@ -6,6 +6,14 @@
 
 @section('cetak_inventaris')
 
+    {{--  Button PRINT  --}}
+    <p>
+        <a href="/inventaris/print" class="btn btn-primary" target="_blank">PRINT TO PRINTER</a>
+        <a href="/inventaris/printpdf" class="btn btn-success" target="_blank">PRINT TO PDF</a>
+    </p>
+
+
+
     {{--  Membuat Notifikasi  --}}
     @if (session('pesan'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">

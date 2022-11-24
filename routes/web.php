@@ -112,3 +112,9 @@ Route::get('inventaris/DeleteInventaris/{id_inventaris}', [
     InventarisController::class,
     'Delete'
 ]);
+
+// PRINT PDF
+Route::get('/inventaris/printpdf', [InventarisController::class, 'printpdf']);
+
+// PRINT PRINTER
+Route::get('/inventaris/print', [InventarisController::class, 'print']);
