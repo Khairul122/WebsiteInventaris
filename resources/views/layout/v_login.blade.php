@@ -68,9 +68,9 @@
                         <!-- /.col -->
                     </div>
                 </form>
-                {{--  <p class="mb-0">
+                <p class="mb-0">
                     <a href="{{ route('register') }}" class="text-center">Register</a>
-                </p>  --}}
+                </p>
             </div>
             <!-- /.login-card-body -->
         </div>

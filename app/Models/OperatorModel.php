@@ -50,4 +50,10 @@ class OperatorModel extends Model
     {
         DB::table('operator')->where('id_operator', $id_operator)->delete();
     }
+
+    // Menampilkan Nama User di Navabar
+    public function NamaUser()
+    {
+        return DB::table('users')->get();
+    }
 }

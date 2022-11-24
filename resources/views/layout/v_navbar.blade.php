@@ -16,7 +16,7 @@
         <a href="https://distanbun.acehprov.go.id/" class="brand-link">
             <img src="{{ asset('gambar') }}/logo aceh.png" alt="Logo Dinas" class="brand-image img-circle elevation-3"
                 style="opacity: .8">
-            <span class="brand-text font-weight-light">DINAS</span>
+            <span class="brand-text font-weight-light">DINAS PERTANIAN</span>
         </a>
 
         <!-- Sidebar -->
@@ -26,9 +26,11 @@
                 <div class="image">
                     <img src="{{ asset('gambar') }}/admin.png" class="img-circle elevation-2" alt="User Image">
                 </div>
+
                 <div class="info">
-                    <a href="#" class="d-block">USER</a>
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                 </div>
+
             </div>
 
             <!-- Sidebar Menu -->
@@ -46,83 +48,109 @@
                         </a>
                     </li>
 
-                    {{--  Menu Bar Operator  --}}
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i></i>
-                            <p>
-                                Operator
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/input_operator" class="nav-link">
-                                    <i></i>
-                                    <p>Input Data Opeator</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/cetak_operator" class="nav-link">
-                                    <i></i>
-                                    <p>Cetak Data Operator</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    @if (Auth::user()->level == 1)
+                        {{--  Menu Bar Operator  --}}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i></i>
+                                <p>
+                                    Operator
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/input_operator" class="nav-link">
+                                        <i></i>
+                                        <p>Input Data Opeator</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/cetak_operator" class="nav-link">
+                                        <i></i>
+                                        <p>Cetak Data Operator</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    {{--  Menu Bar Lokasi  --}}
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i></i>
-                            <p>
-                                Lokasi
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/input_lokasi" class="nav-link">
-                                    <i></i>
-                                    <p>Input Data Lokasi</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/cetak_lokasi" class="nav-link">
-                                    <i></i>
-                                    <p>Cetak Data Lokasi</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        {{--  Menu Bar Lokasi  --}}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i></i>
+                                <p>
+                                    Lokasi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/input_lokasi" class="nav-link">
+                                        <i></i>
+                                        <p>Input Data Lokasi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/cetak_lokasi" class="nav-link">
+                                        <i></i>
+                                        <p>Cetak Data Lokasi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    {{--  Master Bar Inventaris  --}}
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i></i>
-                            <p>
-                                Inventaris
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/input_inventaris" class="nav-link">
-                                    <i></i>
-                                    <p>Input Data Inventaris</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/cetak_inventaris" class="nav-link">
-                                    <i></i>
-                                    <p>Cetak Data Inventaris</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        {{--  Master Bar Inventaris  --}}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i></i>
+                                <p>
+                                    Inventaris
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/input_inventaris" class="nav-link">
+                                        <i></i>
+                                        <p>Input Data Inventaris</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/cetak_inventaris" class="nav-link">
+                                        <i></i>
+                                        <p>Cetak Data Inventaris</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
-                    {{--  Menu Bar Cetak Laporan  --}}
-
+                    @if (Auth::user()->level >= 2)
+                        {{--  Master Bar Inventaris  --}}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i></i>
+                                <p>
+                                    Inventaris
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/input_inventaris" class="nav-link">
+                                        <i></i>
+                                        <p>Input Data Inventaris</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/cetak_inventaris" class="nav-link">
+                                        <i></i>
+                                        <p>Cetak Data Inventaris</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
                     <button class="btn btn-primary" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
