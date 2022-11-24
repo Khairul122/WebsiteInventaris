@@ -126,8 +126,3 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //HAK AKSES USER
-Route::group(['middleware' => 'user'], function () {
-    Route::get('/', [DashboardController::class, 'dashboard']);
-
-    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
-});

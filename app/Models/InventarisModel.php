@@ -24,6 +24,7 @@ class InventarisModel extends Model
     //Menampilak All Lokasi
     public function allData()
     {
+
         return DB::table('lokasi')->get();
     }
 
@@ -44,5 +45,10 @@ class InventarisModel extends Model
     public function DeleteInventaris($id_inventaris)
     {
         DB::table('inventaris')->where('id_inventaris', $id_inventaris)->delete();
+    }
+
+    public function PrintData()
+    {
+        return DB::table('inventaris')->get();
     }
 }

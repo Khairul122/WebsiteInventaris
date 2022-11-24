@@ -142,14 +142,14 @@ class InventarisController extends Controller
     public function print()
     {
         $data_inventaris = [
-            'inventaris' => $this->InventarisModel->allData(),
+            'inventaris' => $this->InventarisModel->PrintData(),
         ];
         return view('inventaris/v_print', $data_inventaris);
     }
     public function printpdf()
     {
         $data_inventaris = [
-            'inventaris' => $this->InventarisModel->allData(),
+            'inventaris' => $this->InventarisModel->PrintData(),
         ];
         $html = view('inventaris/v_printpdf', $data_inventaris);
 
