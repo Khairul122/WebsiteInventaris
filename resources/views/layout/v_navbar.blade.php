@@ -5,10 +5,10 @@
         <!-- Left navbar links -->
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-
         </ul>
     </nav>
-    <!-- /.navbar -->
+
+
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -35,8 +35,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
                     <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
                         <a href="/dashboard" class="nav-link">
                             <i></i>
@@ -123,17 +122,20 @@
                     </li>
 
                     {{--  Menu Bar Cetak Laporan  --}}
-                    <li class="nav-item">
-                        <a href="/cetak_data" class="nav-link">
-                            <i></i>
-                            <p>
-                                Cetak Laporan
-                                <i></i>
-                            </p>
-                        </a>
-                    </li>
+
+                    <button class="btn btn-primary" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </button>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
             </nav>
-            <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
+
+
+
     </aside>

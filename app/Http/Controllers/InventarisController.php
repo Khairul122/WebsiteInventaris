@@ -14,6 +14,7 @@ class InventarisController extends Controller
     // Menampilkan Data Inventaris
     public function __construct()
     {
+        $this->middleware('auth');
         $this->InventarisModel = new InventarisModel;
     }
 

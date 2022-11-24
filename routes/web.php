@@ -26,6 +26,8 @@ use App\Http\Controllers\InventarisController;
 
 // Dashboard
 // Menampilkan Halaman Dashboard
+Route::get('/', [DashboardController::class, 'dashboard']);
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 
 
@@ -118,3 +120,7 @@ Route::get('/inventaris/printpdf', [InventarisController::class, 'printpdf']);
 
 // PRINT PRINTER
 Route::get('/inventaris/print', [InventarisController::class, 'print']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

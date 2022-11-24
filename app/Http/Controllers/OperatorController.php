@@ -15,6 +15,7 @@ class OperatorController extends Controller
     // Menampilkan Data Operator
     public function __construct()
     {
+        $this->middleware('auth');
         $this->OperatorModel = new OperatorModel;
     }
 

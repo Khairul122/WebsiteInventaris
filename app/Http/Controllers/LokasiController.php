@@ -12,6 +12,7 @@ class LokasiController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
         $this->LokasiModel = new LokasiModel;
     }
 
