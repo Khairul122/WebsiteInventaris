@@ -7,6 +7,7 @@ use App\Models\InventarisModel;
 use App\Models\LokasiModel;
 use Illuminate\Support\Facades\DB;
 use App\Models\OperatorModel;
+use Dompdf\Dompdf;
 
 class InventarisController extends Controller
 {
@@ -134,5 +135,33 @@ class InventarisController extends Controller
     {
         $this->InventarisModel->DeleteInventaris($id_inventaris);
         return redirect()->route('inventaris')->with('pesan', 'Data Berhasil Di Hapus');
+    }
+
+    // Cetak Laporan
+    public function print()
+    {
+        $data_inventaris = [
+            'inventaris' => $this->InventarisModel->allData(),
+        ];
+        return view('inventaris/v_print', $data_inventaris);
+    }
+    public function printpdf()
+    {
+        $data_inventaris = [
+            'inventaris' => $this->InventarisModel->allData(),
+        ];
+        $html = view('inventaris/v_printpdf', $data_inventaris);
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 }
