@@ -17,10 +17,16 @@
     <link rel="stylesheet" href="{{ asset('template') }}/dist/css/adminlte.min.css">
 </head>
 
+<div class="login-logo">
+    <a href="">
+        <img src="{{ asset('gambar') }}/logo aceh.png" alt="" style="width: 100px">
+    </a>
+</div>
+
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>LOGIN</b>USER</a>
+            <a href="../../index2.html"><b>LOGIN</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">

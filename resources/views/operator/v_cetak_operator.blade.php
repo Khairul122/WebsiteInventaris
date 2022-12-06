@@ -1,7 +1,7 @@
 @extends('layout/v_template_dashboard')
 
-@section('title', 'Halaman Operator')
-@section('side_title', 'Cetak Operator')
+@section('title', 'Halaman Penerima')
+@section('side_title', 'Cetak Penerima')
 
 
 @section('cetak_lokasi')

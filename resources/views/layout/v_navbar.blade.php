@@ -47,6 +47,30 @@
                             </p>
                         </a>
                     </li>
+                    {{--  Menu Bar Lokasi  --}}
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i></i>
+                            <p>
+                                Lokasi
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/input_lokasi" class="nav-link">
+                                    <i></i>
+                                    <p>Input Data Lokasi</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/cetak_lokasi" class="nav-link">
+                                    <i></i>
+                                    <p> Data Lokasi</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     @if (Auth::user()->level == 1)
                         {{--  Menu Bar Operator  --}}
@@ -54,7 +78,7 @@
                             <a href="#" class="nav-link">
                                 <i></i>
                                 <p>
-                                    Operator
+                                    Penerima
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -62,38 +86,13 @@
                                 <li class="nav-item">
                                     <a href="/input_operator" class="nav-link">
                                         <i></i>
-                                        <p>Input Data Opeator</p>
+                                        <p>Input Data Penerima</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/cetak_operator" class="nav-link">
                                         <i></i>
-                                        <p>Cetak Data Operator</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        {{--  Menu Bar Lokasi  --}}
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i></i>
-                                <p>
-                                    Lokasi
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/input_lokasi" class="nav-link">
-                                        <i></i>
-                                        <p>Input Data Lokasi</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/cetak_lokasi" class="nav-link">
-                                        <i></i>
-                                        <p>Cetak Data Lokasi</p>
+                                        <p>Data Penerima</p>
                                     </a>
                                 </li>
                             </ul>

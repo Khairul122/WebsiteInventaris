@@ -1,7 +1,7 @@
 @extends('layout/v_template_dashboard')
 
-@section('title', 'Halaman Operator')
-@section('side_title', 'Input Operator')
+@section('title', 'Halaman Penerima')
+@section('side_title', 'Input Penerima')
 
 
 @section('input_operator')
@@ -13,7 +13,7 @@
         <div class="card card-info">
             <div class="card-header">
 
-                <h3 class="card-title">Input Data Operator</h3>
+                <h3 class="card-title">Input Data Penerima</h3>
             </div>
 
             <div class="card-body">
